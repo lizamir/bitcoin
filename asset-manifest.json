@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/bitcoin/static/css/main.6a244b8c.chunk.css",
+    "main.js": "/bitcoin/static/js/main.36852c14.chunk.js",
+    "main.js.map": "/bitcoin/static/js/main.36852c14.chunk.js.map",
+    "runtime-main.js": "/bitcoin/static/js/runtime-main.dcaec38b.js",
+    "runtime-main.js.map": "/bitcoin/static/js/runtime-main.dcaec38b.js.map",
+    "static/js/2.e09c5a94.chunk.js": "/bitcoin/static/js/2.e09c5a94.chunk.js",
+    "static/js/2.e09c5a94.chunk.js.map": "/bitcoin/static/js/2.e09c5a94.chunk.js.map",
+    "static/js/3.ebfcba8b.chunk.js": "/bitcoin/static/js/3.ebfcba8b.chunk.js",
+    "static/js/3.ebfcba8b.chunk.js.map": "/bitcoin/static/js/3.ebfcba8b.chunk.js.map",
+    "index.html": "/bitcoin/index.html",
+    "static/css/main.6a244b8c.chunk.css.map": "/bitcoin/static/css/main.6a244b8c.chunk.css.map",
+    "static/js/2.e09c5a94.chunk.js.LICENSE.txt": "/bitcoin/static/js/2.e09c5a94.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/bitcoin/static/media/Segoe-UI.45472284.ttf",
+    "static/media/add.svg": "/bitcoin/static/media/add.7887d9b6.svg",
+    "static/media/back.svg": "/bitcoin/static/media/back.245fade4.svg",
+    "static/media/SignUp.scss": "/bitcoin/static/media/bitcoin-img.a4763580.svg",
+    "static/media/bitcoin.png": "/bitcoin/static/media/bitcoin.c4020586.png",
+    "static/media/delete.svg": "/bitcoin/static/media/delete.7bc898a9.svg",
+    "static/media/download.svg": "/bitcoin/static/media/download.f5f76e23.svg",
+    "static/media/edit.svg": "/bitcoin/static/media/edit.875ed7da.svg",
+    "static/media/logo-footer.svg": "/bitcoin/static/media/logo-footer.6560803c.svg",
+    "static/media/BitconApp.scss": "/bitcoin/static/media/overview-bg.63e83af4.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dcaec38b.js",
+    "static/js/2.e09c5a94.chunk.js",
+    "static/css/main.6a244b8c.chunk.css",
+    "static/js/main.36852c14.chunk.js"
+  ]
+}
