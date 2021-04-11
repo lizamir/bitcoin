@@ -1,0 +1,30 @@
+.transfer-fund {
+    height: 150px;
+    width: 300px;
+    background-color: #ff942c;
+    border-radius: 5px;
+    color: #eceaea;
+    margin-block-start: 17px;
+
+    h4 {
+        margin-block-start: 25px;
+    }
+
+    input {
+        margin-block-start: 10px;
+        background-color: transparent;
+        border-width: 0 0 1px 0; /* top right bottom left */
+        border-color: #eceaea;
+        outline: none;
+        width: 97px;
+    }
+
+    .btn {
+        margin-block-start: 20px;
+        margin-inline-start: 10px;
+        background-color: #13161f;
+        color: #eceaea;
+        justify-content: center;
+        display: inline;
+    }
+}

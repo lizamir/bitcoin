@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import './App.scss';
+import { BitconApp } from './views/BitconApp';
+import { Contact } from './views/Contact';
+import { StatisticPage } from './views/StatisticPage';
+import { ContactDetails } from './views/ContactDetails';
+import { ContactEdit } from './views/ContactEdit';
+import { SignUp } from './views/SignUp';
+import { AppHeader } from './cmps/AppHeader';
 
-function App() {
+export function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <AppHeader />
+        <Switch>
+        <Route component={ContactEdit} path='/contact/edit/:id?' />
+          <Route component={ContactDetails} path='/contact/:id' />
+          <Route component={Contact} path='/contact' />
+          <Route component={StatisticPage} path='/statistic' />
+          <Route component={SignUp} path='/Signup' />
+          <Route component={BitconApp} path='/' />
+        </Switch>
+      </div>
+    </Router>
+
+
   );
 }
 
-export default App;
