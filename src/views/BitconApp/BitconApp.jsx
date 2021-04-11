@@ -45,8 +45,8 @@ class _BitconApp extends Component {
                 </div>
                 <div className="flex align-center justify-center column coins">
                     <h1>Hello <span>{user.name}</span></h1>
-                    <p><img src={require('../../assets/icons/coins.png').default} alt="" />  coins:{user.coins} </p>
-                    <p><img alt='' src={require('../../assets/icons/bitcoin.png').default} /> BTC: {this.state.rate} </p>
+                    <p><img src={require('../../assets/icons/coins.png').default} alt="" />  Coins : {user.coins} </p>
+                    <p><img alt='' src={require('../../assets/icons/bitcoin.png').default} /> BTC : {this.state.rate} </p>
 
                 </div>
             </div>

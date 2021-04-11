@@ -45,7 +45,7 @@ class _ContactDetails extends Component {
     this.props.addMove(this.state.contact, this.state.amount, this.props.user._id);
   };
   contactMoves = () => {
-    console.log(this.props);
+    console.log(this.props.user);
     const contactMoves = this.props.user.moves.filter((move) => move.toId === this.props.contact._id);
     this.setState({ contactMoves });
   };

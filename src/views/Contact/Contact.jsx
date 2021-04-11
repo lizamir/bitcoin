@@ -91,7 +91,7 @@ class _Contact extends Component {
 
   render() {
     const { contacts } = this.props
-    return <div className="flex align-center column main-layout contact-page">
+    return <div className="flex align-center justify-center column main-layout contact-page">
       <div className="flex align-center menu-contact">
         <ContactFilter onChangeFilter={this.onChangeFilter} />
         <Link to={'/contact/edit/'}>

@@ -7,9 +7,15 @@ export const userService = {
 };
 const STORAGE_KEY = 'user';
 const gDefaultUsers = [
+  // {
+  //   _id: '101',
+  //   name: 'Liz Hajaj',
+  //   coins: 100,
+  //   moves: [],
+  // },
   {
-    _id: '101',
-    name: 'Liz Hajaj',
+    _id: '5a566402a6499c1d4da9220a',
+    name: 'Shana Pope',
     coins: 100,
     moves: [],
   },
