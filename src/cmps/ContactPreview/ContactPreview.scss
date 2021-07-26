@@ -14,9 +14,12 @@
     }
     img {
         width: 80px;
+        margin-inline-end: 10px;
+        border-radius: 5px;
     }
     p {
-        margin-inline-end: 10px;
-        font-size: rem(16px);
+        margin-inline-end: 20px;
+        max-width: 6ch;
+        // font-size: rem(16px);
     }
 }

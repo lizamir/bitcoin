@@ -17,13 +17,14 @@ class _ContactDetails extends Component {
 
   async componentDidMount() {
     await this.props.getContactById(this.props.match.params.id)
-    this.contactMoves();
+
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.match.params.id !== this.props.match.params.id) {
-      this.props.getContactById(this.props.match.params.id);
+    if (prevProps.user.moves?.length !== this.props.user.moves?.length) {
+      this.contactMoves();
     }
+
   }
 
 
@@ -41,34 +42,37 @@ class _ContactDetails extends Component {
 
   onTransferCoins = async (ev) => {
     ev.preventDefault();
-    console.log(this.props);
-    this.props.addMove(this.state.contact, this.state.amount, this.props.user._id);
+    this.props.addMove(this.props.contact, this.state.amount, this.props.user._id);
+    // console.log(this.props);
   };
+
   contactMoves = () => {
-    console.log(this.props.user);
-    const contactMoves = this.props.user.moves.filter((move) => move.toId === this.props.contact._id);
+    const { user, contact } = this.props;
+    //  console.log(user.moves);
+    const contactMoves = user.moves.filter((move) => move.toId === contact._id);
     this.setState({ contactMoves });
-  };
+  }
 
   render() {
     const { contact } = this.props
+    console.log(this.state.contactMoves);
     if (!contact) return <div>Loading Contact.....</div>
     return (
       <div className="flex column align-center justify-center main-layout contact-details">
 
-        <img className="img-user" src={`https://robohash.org/set_set4/${contact.name}?size=200x200`} alt="" />
+        <img className="img-user" src={`https://i.pravatar.cc/150?u=${contact._id}`} alt="" />
         <p>Name: {contact.name}</p>
         <p>Phone: {contact.phone}</p>
         <p>E-mail: {contact.email}</p>
 
         <TransferFund contactName={contact.name} handleChange={this.handleChange} onTransferCoins={this.onTransferCoins} />
-        { this.state.contactMoves && this.state.contactMoves.length > 0 && <MoveList contactMoves={this.state.contactMoves} />}
+        {this.state.contactMoves && this.state.contactMoves.length > 0 && <MoveList contactMoves={this.state.contactMoves} />}
 
         <div className="flex space-between  menu-icoins">
-        <Link to={'/contact/'}> <img src={require('../../assets/icons/back.svg').default} title="back" alt="Back" className="icon" /></Link>
-          <button  onClick={() => this.onDeleteContact()}><img src={require('../../assets/icons/delete.svg').default} title="delete-user" alt="delete" className="delete" /></button>
+          <Link to={'/contact/'}> <img src={require('../../assets/icons/back.svg').default} title="back" alt="Back" className="icon" /></Link>
+          <button onClick={() => this.onDeleteContact()}><img src={require('../../assets/icons/delete.svg').default} title="delete-user" alt="delete" className="delete" /></button>
           <Link to={'/contact/edit/' + contact._id}><img src={require('../../assets/icons/edit.svg').default} title="edit-user" alt="edit" className="icon edit" /></Link>
-         
+
         </div>
 
       </div>

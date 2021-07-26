@@ -1,4 +1,5 @@
 import { storageService } from './async-storage.service.js';
+import { httpService } from './http.service';
 
 export const contactService = {
   getContacts,
@@ -126,6 +127,7 @@ const gDefaultContacts = [
   },
 ];
 
+const CONTACT_URL = 'contact/';
 const STORAGE_KEY = 'contacts';
 
 _loadContacts();
@@ -145,7 +147,8 @@ function sort(arr) {
 async function getContacts(filterBy = null) {
   var contactsToReturn;
   try {
-    const contacts = await storageService.query(STORAGE_KEY);
+    const contacts = await httpService.get(CONTACT_URL);
+    // const contacts = await storageService.query(STORAGE_KEY);
     if (filterBy && filterBy.term) {
       contactsToReturn = filter(filterBy.term, contacts);
       return sort(contactsToReturn);
@@ -158,7 +161,8 @@ async function getContacts(filterBy = null) {
 
 async function getContactById(id) {
   try {
-    const contact = await storageService.get(STORAGE_KEY, id);
+    const contact = await httpService.get(CONTACT_URL)+ id;
+    // const contact = await storageService.get(STORAGE_KEY, id);
     return contact;
   } catch (err) {
     console.log(`Contact id ${id} not found!`, err);
@@ -167,9 +171,10 @@ async function getContactById(id) {
 
 async function deleteContact(id) {
   try {
-    await storageService.remove(STORAGE_KEY, id);
-    const contacts = storageService.query(STORAGE_KEY);
-    if (!contacts.length) storageService.store(STORAGE_KEY, gDefaultContacts);
+    return httpService.delete(`contact/${id}`, id);
+    // await storageService.remove(STORAGE_KEY, id);
+    // const contacts = storageService.query(STORAGE_KEY);
+    // if (!contacts.length) storageService.store(STORAGE_KEY, gDefaultContacts);
   } catch (err) {
     console.log(`cant delete contact ${id}`, err);
   }
@@ -179,9 +184,11 @@ async function saveContact(contact) {
   var updatedContact;
   try {
     if (contact._id) {
-      updatedContact = await storageService.put(STORAGE_KEY, contact);
+      updatedContact = await httpService.put(CONTACT_URL + contact._id, contact);
+      // updatedContact = await storageService.put(STORAGE_KEY, contact);
     } else {
-      updatedContact = await storageService.post(STORAGE_KEY, contact);
+      updatedContact = await httpService.post(CONTACT_URL, contact);
+      // updatedContact = await storageService.post(STORAGE_KEY, contact);
     }
     return updatedContact;
   } catch (err) {

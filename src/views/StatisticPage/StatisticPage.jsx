@@ -1,6 +1,6 @@
 
 import { Component } from 'react'
-import { Charts } from '../../cmps/Charts'
+// import { Charts } from '../../cmps/Charts'
 import {bitcoinService} from '../../services/bitcoinService'
 
 import './StatisticPage.scss'
@@ -25,9 +25,9 @@ export class StatisticPage extends Component {
         return  (
             <div>
                 <h1>statisic page</h1>
-                {marketPrice && <Charts data={marketPrice } title="Market Price" />}
+                {/* {marketPrice && <Charts data={marketPrice } title="Market Price" />} */}
 
-                {confirmedTransactions && <Charts data={confirmedTransactions } title="confirmed Transactions"  />}
+                {/* {confirmedTransactions && <Charts data={confirmedTransactions } title="confirmed Transactions"  />} */}
             </div>
         )
     }

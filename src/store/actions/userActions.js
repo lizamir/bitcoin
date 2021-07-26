@@ -9,9 +9,8 @@ export function setUser() {
 }
 
 export function addMove(contact, amount, userId) {
-  return async (dispatch) => {
-    console.log(contact, amount, userId);
+  return async dispatch => {
     const updatedUser = await userService.addMove(contact, amount, userId);
-    dispatch({ type: 'SET_USER', user:updatedUser });
+    dispatch({ type: 'SET_USER', user: updatedUser });
   };
 }

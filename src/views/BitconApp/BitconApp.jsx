@@ -41,7 +41,7 @@ class _BitconApp extends Component {
         return (
             <div className="flex align-center justify-center bitcon-app">
                 <div className="flex column details-user">
-                    <img className="img" src={`https://robohash.org/set_set4/${user._id}?`} alt="" />
+                    <img className="img" src={`https://i.pravatar.cc/150?u=${user._id}`} alt="" />
                 </div>
                 <div className="flex align-center justify-center column coins">
                     <h1>Hello <span>{user.name}</span></h1>
