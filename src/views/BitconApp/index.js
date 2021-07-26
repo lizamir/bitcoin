@@ -1,1 +1,0 @@
-export { BitconApp } from './BitconApp'
